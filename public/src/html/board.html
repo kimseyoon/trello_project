@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Welcome TRELLO</title>
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/font-awesome/css/font-awesome.min.css">
+  <script type="text/javascript" src="lib/polyfill.js"></script>
+  <script type="text/javascript" src="dist/bundle.js"></script>
+  <!--<script type="text/javascript" src="src/js/main.js"></script>
+  <script type="text/javascript" src="src/js/header.js"></script>
+  <script type="text/javascript" src="src/js/loadBoard.js"></script>
+  <script type="text/javascript" src="src/js/addBoard.js"></script>
+  <script type="text/javascript" src="src/js/board.js"></script>
+  <script type="text/javascript" src="src/js/loadCard.js"></script>
+  <script type="text/javascript" src="src/js/addList.js"></script>
+  <script type="text/javascript" src="src/js/card.js"></script>
+  <script type="text/javascript" src="src/js/modalLayer.js"></script>
+  <script type="text/javascript" src="src/js/dragAndDrop.js"></script>-->
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="head">
+      <h1><a href="http://localhost:3000/board">TRELLO</a></h1>
+      <section class="schBox">
+        <button type="button" name="button" class="btn board_list_btn"><i class="fa fa-bars"></i>Boards</button>
+        <div class="myBoardList">
+          <p class="title"><i class="fa fa-user"></i> Owned Board</p>
+          <ul class="list">
+          </ul>
+        </div>
+      </section>
+      <section class="infoBox">
+        <button type="button" name="button" class="btn"><i class="fa fa-user-circle"></i>Kim seyoon</button>
+        <button type="button" name="button" class="btn"><i class="fa fa-sign-out"></i>Sign out</button>
+      </section>
+    </header>
+
+    <div class="container">
+      <div class="content">
+
+        <script type="boardWrapTemplate" id="boardWrapTemplate">
+            <h2 class="boardTit">My Board</h2>
+            <section class="boardList">
+              <article class="boardAdd input-compo01">
+                <a href="#" class="input-compo01-add">Add a Board...</a>
+                <div class="input-compo01-box">
+                  <input type="text" class="input-compo01-text" name="title" placeholder="Board Name"/>
+                  <button name="button" class="btn gray input-compo01-btn-save">Create Board</button>
+                  or
+                  <a href="#" class="input-compo01-btn-cancel fcBlue">cancel</a>
+                </div>
+              </article>
+            </section>
+        </script>
+
+        <script type="boardTemplate" id="boardTemplate">
+          <p class="title">{{board_title}}<p/>
+        </script>
+
+        <script type="cardListWrapTemplate" id="cardListWrapTemplate">
+
+            <header class="headCont">
+              <h2 class="boardTit">{{board_title}}</h2>
+            </header>
+
+            <section class="cardList">
+              <article class="listAdd input-compo01">
+                <a href="#" class="input-compo01-add">Add a list...</a>
+                <div class="input-compo01-box">
+                  <input type="text" class="input-compo01-text" name="title" placeholder="Add a new list..."/>
+                  <button name="button" class="btn gray input-compo01-btn-save">Save list</button>
+                  or
+                  <a href="#" class="input-compo01-btn-cancel fcBlue">cancel</a>
+                </div>
+              </article>
+            </section>
+
+        </script>
+
+          <script type="popOverTemplate" id="popOverTemplate">
+            <div class="popOver">
+              <div class="tit">
+                List Action
+                <a href ="#" class="popOver-close fa fa-times"></a>
+              </div>
+              <ul>
+                <li><a href="#" class="card-list-delete">This list Delete</a></li>
+              </ul>
+            </div>
+          </script>
+
+          <script type="cardTemplate" id="cardTemplate">
+              <header class="headCard input-compo01">
+                <div class="input-compo01-wrap-add">
+                  <a href="#" class="input-compo01-add head-drag">{{card_title}}</a>
+                  <a href="#" class="input-compo01-pop-open fa fa-ellipsis-h"></a>
+                  <div class="popOver">
+                    <div class="tit">
+                      List Action
+                      <a href ="#" class="popOver-close fa fa-times"></a>
+                    </div>
+                    <ul>
+                      <li><a href="#" class="card-list-delete">This list Delete</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="input-compo01-box">
+                  <input type="text" class="input-compo01-text" placeholder="Add a new list..."/>
+                  <button type="button" name="button" class="btn gray input-compo01-btn-save">Save list</button>
+                  or
+                  <a href="#" class="input-compo01-btn-cancel fcBlue">cancel</a>
+                </div>
+              </header>
+
+              <div class="todoWrap">
+                <div class="todoList"></div>
+
+                <footer class="footCard input-compo01">
+                  <a href="#" class="input-compo01-add">Add a card...</a>
+                  <div class="input-compo01-box">
+                    <textarea name="name" class="input-compo01-text"></textarea>
+                    <button type="button" name="button" class="btn gray input-compo01-btn-save">Add</button>
+                    or
+                    <a href="#" class="input-compo01-btn-cancel fcBlue">cancel</a>
+                  </div>
+                </footer>
+              </div>
+          </script>
+
+          <script type="cardTodoTemplate" id="cardTodoTemplate">
+              {{todo_text}}
+          </script>
+
+          <script type="modalTemplate" id="modalTemplate">
+            <div class="layer">
+              <div class="leftBox">
+                <div class="layer-todo">
+                  <div class="layer-todo-read">
+                    <p class="layer-tit tit">{{modal_title}}</p>
+                    <p class="desc-tit mb10">Description</p>
+                    <p class="desc-txt mb10">{{modal_desciption}}</p>
+                    <a href="#" class="layer-edit-btn">Edit</a>
+                  </div>
+                  <div class="layer-todo-write">
+                    <input type="text" class="todo-write-text"/>
+                    <textarea name="name" class="todo-textarea" placeholder="Description"></textarea>
+                    <button type="button" class="todo-save-btn btn gray">Save card</button>
+                    or
+                    <a href="#" class="todo-cancle-btn">cancel</a>
+                  </div>
+                </div>
+                <div class="layer-comment">
+                  <p class="tit">Add comment</p>
+                  <div class="input-wrap">
+                    <i class="thum fa fa-user-circle"></i>
+                    <div class="input-box">
+                        <textarea name="name" class="comment-text" placeholder="Write a comment..."></textarea>
+                        <button type="button" name="button" class="btn gray comment-save">Save comment</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="layer-activity">
+                  <p class="tit">Activity</p>
+                </div>
+
+              </div>
+              <div class="rightBox">
+                <p class="add-tit tit">Add</p>
+                <ul>
+                  <li><a href="#"><i class="fa fa-users"></i>Members</a></li>
+                  <li><a href="#"><i class="fa fa-tag"></i>Tags</a></li>
+                </ul>
+              </div>
+              <a href="#" class="layer-close fa fa-times"></a>
+            </div>
+        </script>
+
+        <script type="layerCommentTemplate" id="layerCommentTemplate">
+          <i class="thum fa fa-user-circle"></i>
+          <div class="comment-box">
+            <p class="writer"></p>
+            <p class="text">{{modal_reply_text}}</p>
+            <p class="date">{{now_date}} 작성</p>
+          </div>
+        </script>
+
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    접속하신 사이트는 공부를 위해 만들어진 사이트 입니다.
+  </footer>
+</body>
+</html>

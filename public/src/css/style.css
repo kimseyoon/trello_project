@@ -1,0 +1,644 @@
+html, body, div, p , section, article, header, footer, h1, h2, a, button, input, textarea, ul, li{
+  word-break: break-all;
+  white-space: normal;
+  margin:0;
+  padding:0;
+  font-size:16px;
+  font-family:"Helvetica Neue","arial","sans-serif";
+  line-height:18px;
+  color:#666;
+}
+
+a:link,a:hover,a:visited,a:active{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+textarea{
+  display:block;
+  width:calc(100% - 20px);
+  padding:10px;
+  border-radius: 3px;
+  border:1px solid #d9d9d9;
+}
+
+html, body{
+  width:100%;
+  height:100%;
+}
+
+body{
+  background-color:#74D701;
+}
+
+.mb10{
+  margin-bottom:10px !important;
+}
+
+.wrap{
+  width:100%;
+  height:calc(100% - 30px);
+}
+
+.head{
+  position:relative;
+  padding:15px 0 0 0;
+  width:100%;
+  height:35px;
+  background-color:#56A902;
+  box-shadow: 0 0 10px 0 grey;
+}
+
+.container{
+  padding:0 20px;
+  height:calc(100% - 65px);
+  overflow-y: auto;
+}
+
+.container .content{
+  height:100%;
+}
+
+.foot{
+  text-align:center;
+  vertical-align:middle;
+  width:100%;
+  height:30px;
+  color:#F8F8FF;
+  font-size:0.8rem;
+}
+
+.fcBlue{
+  color:#3498db !important;
+}
+
+.btn{
+  cursor: pointer;
+  text-align: center;
+  padding:10px;
+  color:#d9d9d9;
+  border:none;
+  border-radius: 5px;
+  background-color:#66ca02;
+  transition: color 0.2s;
+  /*background:linear-gradient(to bottom, #70de02, #346020);*/
+}
+
+.btn:hover{
+  color:#F8F8FF;
+}
+
+.btn i{
+  margin-right:5px;
+}
+
+.btn.gray{
+  padding:13px 10px;
+  color:#666;
+  border:1px solid #d3d3d3;
+  background-color:#d9d9d9;
+}
+
+input[type="text"]{
+  width:calc(100% - 20px);
+  padding:10px;
+  border:none;
+  border-radius:3px;
+}
+.input-compo01-box{
+  animation: fadein 1s;
+}
+
+
+.input-compo01-box{
+  text-align:left;
+  padding:10px;
+}
+
+.input-compo01-box input[type="text"]{
+  display:block;
+  margin-bottom:10px;
+}
+
+.input-compo01-box textarea{
+  margin-bottom:10px;
+  height:100px;
+}
+
+.head h1{
+  text-align:center;
+}
+
+.head h1 a{
+  color:#F8F8FF;
+  font-size:1.2rem;
+  transition: all 0.2s;
+}
+
+.head h1 a:hover{
+  color:#F8F8FF;
+  font-size:1.2rem;
+  text-shadow: 3px 3px grey;
+}
+
+.head .schBox{
+  position:absolute;
+  top:5px;
+  left:20px;
+}
+
+.head .infoBox{
+  position:absolute;
+  top:5px;
+  right:20px;
+}
+
+.head .infoBox:after{
+  content:"";
+  display: block;
+  clear:both;
+}
+
+.head .infoBox .userName{
+  float:left;
+}
+
+.head .infoBox .btn{
+  float:left;
+  margin-left:10px;
+}
+
+.container .headCont{
+  padding:10px 0;
+}
+
+.container .headCont .boardTit{
+  font-size:1.2rem;
+  color:#F8F8FF;
+}
+
+.cardList{
+  overflow-x: auto;
+  white-space: nowrap;
+  height:calc(100% - 38px);
+  display:flex;
+  align-items: flex-start;
+}
+
+.cardList .card, .cardList .listAdd{
+  /*white-space: normal;
+  display: inline-block;*/
+  flex-shrink: 0;
+  vertical-align: top;
+  width:270px;
+  margin-right:10px;
+  border-radius: 5px;
+  background-color:#e2e4e6;
+  box-shadow: 3px 3px 10px 0 grey;
+}
+
+.input-compo01-wrap-add{
+  position:relative;
+}
+
+.input-compo01-wrap-add .input-compo01-pop-open{
+  text-align:center;
+  vertical-align: middle;
+  position:absolute;
+  top:5px;
+  right:10px;
+  padding:6px 7px;
+  color:#999;
+  border-radius: 3px;
+}
+
+.input-compo01.change .input-compo01-wrap-add .input-compo01-pop-open{
+  display:none;
+}
+
+.input-compo01-wrap-add .input-compo01-pop-open:hover{
+  color:#333;
+  background-color:#d9d9d9;
+}
+
+.input-compo01.change a.input-compo01-add{
+  display:none !important;
+}
+
+.input-compo01 .input-compo01-box{
+  display:none;
+}
+
+.input-compo01.change .input-compo01-box{
+  display:block;
+}
+
+.listAdd.input-compo01 a.input-compo01-add{
+  display: block;
+  padding:10px;
+  color:#f8f8ff;
+  background-color:#56A902;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.card.over{
+  background-color:rgba(0,0,0,0.4);
+}
+
+.card{
+  background-color:rgba(0,0,0,0);
+}
+
+.cardList .input-compo01 a.addBtn:hover{
+  background-color:rgba(0,0,0,0.4);
+}
+
+.cardList .card .tit .inputBox01{
+  display:none;
+}
+
+.cardList .card .tit.change > a{
+  display:none;
+}
+
+.cardList .card .tit.change .inputBox01{
+  display:block;
+}
+
+.cardList .card .headCard a.input-compo01-add{
+  display:block;
+  padding:10px 40px 10px 10px;
+  font-weight:bold;
+}
+
+.cardList .card .todoWrap{
+  height: 100%;
+  overflow-y: auto;
+}
+
+.cardList .card .todoList{
+  padding:0 10px;
+}
+
+.cardList .card .todoList .todo{
+  cursor: pointer;
+  margin-top:10px;
+  padding:10px;
+  border-radius: 5px;
+  background-color:#fff;
+  animation: fadein 1s;
+}
+
+.cardList .card .todoList .todo:hover{
+  background-color:#dadada;
+}
+
+.cardList .card .todoList .todo:first-child{
+  margin-top:0;
+}
+
+.cardList .card .footCard.change > a{
+  display:none;
+}
+
+.cardList .card .footCard .inputBox01{
+  display:none;
+}
+
+.cardList .card .footCard.change .inputBox01{
+  display: block;
+}
+
+.cardList .card .footCard .input-compo01-add{
+  display:block;
+  margin-top:10px;
+  padding:10px;
+  color:#999;
+  border-radius:0 0 5px 5px;
+  transition:all 0.2s;
+}
+
+.cardList .card .footCard .input-compo01-add:hover{
+  color:#000;
+  background-color:rgba(0, 0, 0, 0.1);
+}
+.headCard .popOver{
+  z-index:500;
+  display: none;
+  position:absolute;
+  right:-235px;
+  top:30px;
+  width:250px;
+  padding:10px;
+  border-radius: 3px;
+  border:1px solid #dbdbdb;
+  background-color:#fff;
+  box-shadow: 0 0 0 0 grey;
+}
+
+.headCard .popOver.show {
+  display:block;
+}
+
+.headCard .popOver .tit{
+  position:relative;
+  padding:10px;
+  color:#999;
+  border-bottom:1px solid #dbdbdb;
+}
+
+.headCard .popOver .tit .popOver-close{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
+.headCard .popOver ul{
+  padding-top:10px;
+}
+
+.headCard .popOver ul li a{
+  display: block;
+  padding:10px;
+  color:#333;
+}
+
+.headCard .popOver ul li a:hover{
+  background-color:#dadada;
+}
+
+
+@keyframes fadein{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+@keyframes fadeout{
+  from{opacity: 1;}
+  to{opacity: 0;}
+}
+
+
+.modal-layer{
+  overflow-y: auto;
+  display:block;
+  position: fixed;
+  z-index:1000;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  animation: fadein 0.5s;
+}
+
+.modal-layer .layer{
+  display: flex;
+  position:relative;
+  margin:50px auto 0 auto;
+  width:600px;
+  margin-bottom:50px;
+  padding:20px;
+  border-radius: 3px;
+  background-color:#dee1e3;
+}
+
+.modal-layer .tit{
+  margin-bottom:20px;
+  font-size:1.2em;
+  color:#333;
+  font-weight: bold;
+}
+
+.modal-layer .layer-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+}
+
+.modal-layer .layer .leftBox{
+  flex:2;
+}
+
+.modal-layer .layer .leftBox .layer-edit-btn{
+  color:#3498db;
+}
+
+.modal-layer .layer .leftBox textarea{
+  margin-bottom:10px;
+  height:100px;
+}
+
+.modal-layer .layer .layer-todo{
+  margin-bottom:40px;
+}
+
+.modal-layer .layer .layer-todo.show .layer-todo-read{
+  display:none;
+}
+
+.modal-layer .layer .layer-todo .layer-todo-write{
+  display:none;
+}
+
+.modal-layer .layer .layer-todo.show .layer-todo-write{
+  display:block;
+}
+
+.modal-layer .layer .layer-todo .layer-todo-write input{
+  margin-bottom:10px;
+}
+
+.layer-comment{
+  margin-bottom:40px;
+}
+
+.layer-comment .input-wrap{
+  position:relative;
+  padding-left:35px;
+}
+
+.layer-comment .input-wrap .thum{
+  position:absolute;
+  top:0px;
+  left:0;
+  font-size:24px;
+}
+
+.layer-activity .comment-wrap{
+  position:relative;
+  margin-top:20px;
+}
+
+.layer-activity .comment-wrap:first-child{
+  margin-top:0;
+}
+
+.layer-activity .comment-wrap .thum{
+  position:absolute;
+  top:0px;
+  left:0px;
+  font-size:24px;
+}
+
+.layer-activity .comment-wrap .comment-box{
+  padding-left:35px;
+}
+
+.layer-activity .comment-wrap .comment-box .writer{
+  margin-bottom:5px;
+  color:#333;
+  font-weight: bold;
+}
+
+.layer-activity .comment-wrap .comment-box .text{
+  margin-bottom:5px;
+  padding:10px;
+  border-radius: 3px;
+  border:1px solid #d9d9d9;
+  background-color:#fff;
+}
+
+.layer-activity .comment-wrap .comment-box .date{
+  color:#999;
+  font-size:0.9em;
+}
+
+
+.modal-layer .rightBox{
+  flex: 1;
+  padding-left:20px;
+}
+
+.modal-layer .rightBox ul li{
+  margin-top:5px;
+}
+
+.modal-layer .rightBox ul li:first-child{
+  margin-top:0;
+}
+
+.modal-layer .rightBox ul li a{
+  display: block;
+  color: #333;
+  font-weight: bold;
+  padding:10px;
+  border-radius: 3px;
+  border:1px solid #dbdbdb;
+  background-color: #fff;
+}
+
+.modal-layer .rightBox ul li a:hover{
+  color: #fff;
+  background-color: #3498db;
+}
+
+.modal-layer .rightBox ul li a:hover i{
+  color: #fff;
+}
+
+.modal-layer .rightBox ul li a i{
+  margin-right:10px;
+  color:#d9d9d9;
+}
+
+.boardWrap .boardTit{
+  margin:20px 0;
+  font-size:1.2rem;
+  font-weight:bold;
+  color:#fff;
+}
+
+.boardWrap .boardList{
+  display:flex;
+  flex-wrap:wrap;
+  align-items: flex-start;
+}
+
+.boardWrap .board, .boardWrap .boardAdd{
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-bottom:15px;
+  margin-right:1%;
+  padding:10px;
+  width:24%;
+  margin-right:1%;
+  min-height:78px;
+  font-weight:bold;
+  color:#fff;
+  border-radius: 5px;
+  background-color:#56A902;
+  box-shadow: 3px 3px 10px 0 grey;
+}
+
+.boardWrap .board .title{
+  color:#fff;
+}
+
+.boardWrap .board:hover{
+  opacity: 0.8;
+}
+
+.boardWrap .boardAdd.input-compo01{
+  text-align:center;
+  color:#8c8c8c;
+  background-color:#E2E4E6;
+}
+
+.boardWrap .boardAdd .input-compo01-add{
+  display:block;
+  padding:20px 0;
+}
+
+.boardListWrap, .cardListWrap{
+  height:100%;
+}
+
+.head .schBox .myBoardList{
+  display: none;
+  z-index:500;
+  position:absolute;
+  top:45px;
+  left:0px;
+  padding:10px;
+  width:250px;
+  border-radius: 5px;
+  background-color:#E2E4E6;
+}
+
+.head .schBox .myBoardList.show{
+  display: block;
+}
+
+.head .schBox .myBoardList .title{
+  font-weight:bold;
+  color:#999;
+}
+
+.head .schBox .myBoardList .list{
+  max-height:300px;
+  overflow-y: auto;
+  margin-top:10px;
+}
+
+.head .schBox .myBoardList .list li{
+  cursor: pointer;
+  display: block;
+  margin-top:5px;
+  padding:10px;
+  color:#fff;
+  border-radius: 5px;
+  background-color:#74D701;
+}
+
+.head .schBox .myBoardList .list li:first-child{
+  margin-top:0;
+}
+
+.head .schBox .myBoardList .list li:hover{
+  opacity: 0.8;
+}
