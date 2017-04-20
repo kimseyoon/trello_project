@@ -18,7 +18,6 @@ Card.prototype.clickCard = function(card){
     }
 
     if(target.classList.contains("todo")){
-      //thisObj.openModalLayer(target.getAttribute("data-todoid"));
       thisObj.openModalLayer(target);
       return;
     }
@@ -29,7 +28,6 @@ Card.prototype.clickCard = function(card){
     }
 
     if(target.classList.contains("input-compo01-pop-open") || target.classList.contains("popOver-close")){
-      //thisObj.popOver(target);
       thisObj.toggleClass(target.closest(".input-compo01-wrap-add").querySelector(".popOver"), "show", ".popOver");
       return;
     }
@@ -41,17 +39,6 @@ Card.prototype.clickCard = function(card){
 
   })
 }
-/*
-Card.prototype.popOver = function(target){
-  var card = target.closest(".card");
-  var cardList = document.querySelector(".cardList");
-  var compo01WrapAdd = card.querySelector(".input-compo01-wrap-add");
-  var popOverTemplate = document.getElementById("popOverTemplate").innerHTML;
-  var popWrap = document.createElement("DIV");
-  popWrap.classList.add("popOver");
-  popWrap.insertAdjacentHTML("beforeend", popOverTemplate);
-  compo01WrapAdd.appendChild(popWrap);
-}*/
 
 Card.prototype.toggleClass = function(target, className, allObj){
   var allEle = document.querySelectorAll(allObj);
@@ -80,9 +67,6 @@ Card.prototype.routerAddButton = function(target){
 }
 
 Card.prototype.openModalLayer = function(target){
-  //var modal = document.querySelector(".modal-layer");
-  //modal.classList.add("show");
-  //new ModalLayer(todoid);
   new ModalLayer(target);
 }
 
@@ -94,7 +78,6 @@ Card.prototype.routerSaveButton = function(target){
   }
   if(target.closest(".footCard")){
     this.saveTodo(target);
-    //this.addTodo(target);
     return;
   }
 }
@@ -117,7 +100,6 @@ Card.prototype.updateCardTitle = function(target){
 }
 
 Card.prototype.setCardTitle = function(target){
-  //console.log("aaa")
   var afterTitle = target.closest(".headCard").querySelector(".input-compo01-text").value;
   target.closest(".headCard").querySelector(".input-compo01-add").innerHTML = afterTitle;
   this.toggleClass(target.closest(".input-compo01"), "change", ".input-compo01");
@@ -147,8 +129,6 @@ Card.prototype.saveTodo = function(target){
 
 Card.prototype.addTodo = function(target, todoId){
   var cardTodoTemplate = document.getElementById("cardTodoTemplate").innerHTML;
-  //target.closest(".footCard").querySelector(".input-compo01-text").value;
-
   var text = target.closest(".footCard").querySelector(".input-compo01-text").value;
   var todoList = target.closest(".card").querySelector(".todoList");
   var todoWrap = document.createElement("DIV");
@@ -159,7 +139,6 @@ Card.prototype.addTodo = function(target, todoId){
   todoWrap.insertAdjacentHTML("beforeend", cardTodoTemplate);
   todoList.appendChild(todoWrap);
   var text = target.closest(".footCard").querySelector(".input-compo01-text").value = "";
-  //var drag = new DragAndDrop(this.todoWrap, {wrap:".todoList", dragTarget:"todo", dragWrap:".todo"});
 }
 
 

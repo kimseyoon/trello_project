@@ -19,7 +19,6 @@ AddList.prototype.clickListAdd = function(){
     }
     if(target.classList.contains("input-compo01-btn-save")){
       thisObj.saveCard(target);
-      //thisObj.addCard(target);
       return;
     }
   })

@@ -10,7 +10,6 @@ function DragAndDrop(obj, attr){
   this.dragWrap = attr.dragWrap;
   this.dragTarget = attr.dragTarget;
 
-  //console.log(this.wrap, this.dragWrap, this.dragTarget);
   this.initDragEvent(obj);
 }
 
@@ -26,16 +25,11 @@ DragAndDrop.prototype.initDragEvent = function(obj){
 }
 
 DragAndDrop.prototype.dragStart = function(obj){
-  //e.preventDefault();
-  //e.stopPropagation();
   var thisObj = this;
   obj.addEventListener("dragstart", function(e){
     if(e.target.classList.contains(thisObj.dragTarget)){
-      //console.log(e.clientX);
       e.dataTransfer.setDragImage(e.target.closest(thisObj.dragWrap), 0, 0);
       e.target.closest(thisObj.dragWrap).classList.add("over");
-
-      //var wrap = document.querySelector(thisObj.wrap);
 
       var wrap = e.target.closest(thisObj.wrap);
       var dragIndex = Array.prototype.indexOf.call(wrap.children, e.target.closest(thisObj.dragWrap));
@@ -58,7 +52,6 @@ DragAndDrop.prototype.dragEnter = function(obj){
 DragAndDrop.prototype.dragEnd = function(obj){
   var thisObj = this;
   obj.addEventListener("dragend", function(e){
-    //console.log(e.target)
     e.target.closest(thisObj.dragWrap).classList.remove("over");
   });
 }
@@ -66,7 +59,6 @@ DragAndDrop.prototype.dragEnd = function(obj){
 DragAndDrop.prototype.drag = function(obj){
   var thisObj = this;
   obj.addEventListener("drag", function(e){
-    //console.log(e.target)
   });
 }
 
@@ -79,8 +71,6 @@ DragAndDrop.prototype.dragOver = function(obj){
 
 DragAndDrop.prototype.dragLeave = function(obj){
   obj.addEventListener("dragleave", function(e){
-
-    //e.target.closest(thisObj.dragWrap).classList.add("over");
   })
 
 }
@@ -92,14 +82,12 @@ DragAndDrop.prototype.drop = function(obj){
     if(dragIndex === ""){
       return;
     }
-    //var wrap = document.querySelector(thisObj.wrap);
     var wrap = e.target.closest(thisObj.wrap);
     if(e.target.closest(thisObj.dragWrap)){
       var dropIndex = Array.prototype.indexOf.call(wrap.children, e.target.closest(thisObj.dragWrap));
       if(dragIndex < dropIndex){
         insertAfter(wrap.children[dragIndex], e.target.closest(thisObj.dragWrap));
       }
-
       else{
         wrap.insertBefore(wrap.children[dragIndex], e.target.closest(thisObj.dragWrap));
       }

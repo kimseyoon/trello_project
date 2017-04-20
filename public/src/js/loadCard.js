@@ -1,22 +1,8 @@
 function LoadCard(boardId, boardTitle){
-  //history.pushState({}, boardTitle, "/board/"+boardTitle);
-
   this.cardTemplate = document.getElementById("cardTemplate").innerHTML;
   this.todoTemplate = document.getElementById("cardTodoTemplate").innerHTML;
-  //this.getBoardTit(boardId);
   this.changeWrap(boardId, boardTitle);
 }
-/*
-LoadCard.prototype.getBoardTit = function(boardId){
-  var thisObj = this;
-  var oReq = new XMLHttpRequest();
-  oReq.addEventListener("load", function(){
-    var obj = JSON.parse(this.responseText);
-    thisObj.changeWrap(boardId, obj)
-  });
-  oReq.open("GET", "http://localhost:3000/board/get_boardTit?id="+boardId);
-  oReq.send();
-}*/
 
 LoadCard.prototype.changeWrap = function(boardId, boardTitle){
   var content = document.querySelector(".content");

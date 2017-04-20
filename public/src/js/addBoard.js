@@ -62,17 +62,7 @@ AddBoard.prototype.addBoard = function(target, boardId){
   boardWrap.setAttribute("data-boardid", boardId);
   result = boardTemplate.replace("{{board_title}}", title);
   boardWrap.insertAdjacentHTML("beforeend", result);
-  //boardWrap.innerHTML = title;
   boardList.insertBefore(boardWrap, boardAdd);
   new Board(boardWrap);
-  //this.initBoardClick(boardWrap);
   target.closest(".input-compo01-box").querySelector(".input-compo01-text").value = "";
 }
-/*
-AddBoard.prototype.initBoardClick = function(board){
-  board.addEventListener("click", function(){
-    var boardId = board.getAttribute("data-boardid");
-    new LoadCard(boardId);
-    new AddList();
-  })
-}*/

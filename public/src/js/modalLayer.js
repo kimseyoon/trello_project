@@ -50,9 +50,6 @@ ModalLayer.prototype.makeModal = function(obj, todoid){
   this.content.appendChild(modalWrap);
 
   var layerActivity = document.querySelector(".layer-activity");
-  //this.commentTemplate;
-
-
   var commentResult = "";
   for(var i=0;i<obj[1].length;i++){
 
@@ -80,7 +77,6 @@ ModalLayer.prototype.clickModal = function(todoid){
     if(target.classList.contains("layer-edit-btn")){
       thisObj.show(target, ".layer-todo");
       thisObj.getLayerTodo(target, thisObj.modal);
-      //console.log(target.closest(".layer-todo").querySelector(".todo-write-text"));
       return;
     }
 
@@ -95,7 +91,6 @@ ModalLayer.prototype.clickModal = function(todoid){
       }
       thisObj.updateTodo(target, todoid);
       thisObj.setLayerTodo(target);
-      //target.closest(".layer-todo").querySelector(".desc-txt").innerHTML = target.closest(".layer-todo-write").querySelector(".todo-textarea").value;
       thisObj.hide(target, ".layer-todo");
       return;
     }
